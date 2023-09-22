@@ -170,8 +170,9 @@
     background-color: #fff;
     height: 80vh;
     width: 80vw;
-    top: 10%;
-    left: calc(50% - 40vw);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 25px;
 }
 
