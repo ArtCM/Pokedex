@@ -29,17 +29,36 @@ function loadPokemonItens(offset, limit) {
     });
 }
 
+const pokemonStatus = document.querySelector(".appearpoke");
+
 function displayPokemonInfo(pokemon){
-    const pokemonStatus = document.querySelector(".appearpoke");
     const statusContent = `
-        <h2>${pokemon.name}</h2>
-        <p>Número: ${pokemon.number}</p>
-        <p>Tipo: ${pokemon.type}</p>
-        <img src="${pokemon.photo}" alt="${pokemon.name}">
+        <h2 class="${pokemon.type}">${pokemon.name} <span class="pokemon-status__exit"></span></h2>
+        <div class="pokemon-status__header">
+            <img src="${pokemon.photo}" alt="${pokemon.name}">
+        </div>
+        <div class="pokemon-status__types type ${pokemon.type}">
+           <p class="">${pokemon.type}</p>
+        </div>
+        <div class="pokemon-status__body">
+                ${pokemon.number}
+        </div>
     `;
     pokemonStatus.innerHTML = statusContent;
     pokemonStatus.classList.remove("d-none");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const exitButton = document.querySelector(".pokemon-status__exit");
+    const appearpoke = document.querySelector(".appearpoke");
+
+
+    exitButton.addEventListener("click", () => {
+        appearpoke.classList.add("d-none");
+    });
+
+});
+
 
 function addPokemonClickHandlers() {
     const pokemonElements = document.querySelectorAll(".pokeclick");
