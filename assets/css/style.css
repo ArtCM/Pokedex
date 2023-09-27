@@ -187,20 +187,10 @@
     border-radius: 15px 15px 0 0;
 }
 
-.pokemonstatus h2 span{
-    font-size: 16px;
-    padding-left: 20px;
-    color: #66666683;
-}
-
 .pokemonstatus .pokemon-status__header{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.pokemonstatus .pokemon-status__header p{
-    padding-left: 20px;
 }
 
 .pokemonstatus .pokemon-status__header img{
@@ -225,14 +215,53 @@
 
 .pokemon-status__body{
     background-color: #9797976b;
-    height: 55%;
+    height: 360px;
     border-radius: 0 0 15px 15px;
+    align-self: center;
 }
 
 .pokemon-status__exit{
     cursor: pointer;
-    background-color: #000;
-    width: 15px;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    justify-self: right!important;
+    overflow: hidden;
+    position: relative;
+}
+
+.pokemon-status__exit::before,
+.pokemon-status__exit::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #000; /* Cor do traço do "X" */
+    top: 50%;
+    left: 0;
+    transform-origin: center;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.pokemon-status__exit::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.poke__title h2{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    padding-left: 30px;
+}
+
+.poke__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -270,6 +299,6 @@
     }
 
     .pokemon-status__body{
-        height: 56%;
+        height: 420px;
     }
 }

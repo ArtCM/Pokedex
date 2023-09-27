@@ -29,11 +29,14 @@ function loadPokemonItens(offset, limit) {
     });
 }
 
-const pokemonStatus = document.querySelector(".appearpoke");
+var pokemonStatus = document.querySelector(".appearpoke");
 
 function displayPokemonInfo(pokemon){
     const statusContent = `
-        <h2 class="${pokemon.type}">${pokemon.name} <span class="pokemon-status__exit"></span></h2>
+        <div class="${pokemon.type} poke__title">
+            <h2>${pokemon.name}</h2>
+            <div class="pokemon-status__exit"></div>
+        </div>
         <div class="pokemon-status__header">
             <img src="${pokemon.photo}" alt="${pokemon.name}">
         </div>
@@ -46,18 +49,19 @@ function displayPokemonInfo(pokemon){
     `;
     pokemonStatus.innerHTML = statusContent;
     pokemonStatus.classList.remove("d-none");
+    closeStatus();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const exitButton = document.querySelector(".pokemon-status__exit");
-    const appearpoke = document.querySelector(".appearpoke");
+function closeStatus() {
+    const exitButtons = document.querySelectorAll(".pokemon-status__exit");
 
-
-    exitButton.addEventListener("click", () => {
-        appearpoke.classList.add("d-none");
+    exitButtons.forEach((exitButton) => {
+        exitButton.addEventListener("click", () => {
+            const appearpoke = document.querySelector(".appearpoke");
+            appearpoke.classList.add("d-none");
+        });
     });
-
-});
+}
 
 
 function addPokemonClickHandlers() {
