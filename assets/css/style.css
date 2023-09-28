@@ -168,7 +168,7 @@
     position: fixed!important;
     z-index: 200!important;
     background-color: #fff;
-    height: 80vh;
+    height: 700px;
     width: 80vw;
     top: 50%;
     left: 50%;
@@ -214,10 +214,19 @@
 }
 
 .pokemon-status__body{
-    background-color: #9797976b;
-    height: 360px;
-    border-radius: 0 0 15px 15px;
-    align-self: center;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 0 15px;
+    border: 5px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 10000;
+}
+
+.pokemon-status__body h3{
+    padding: 5px;
+    cursor: pointer;
 }
 
 .pokemon-status__exit{
@@ -254,6 +263,10 @@
     padding-left: 30px;
 }
 
+.pokemon-status__body .titleselect, .pokemon-status__body h3:hover{
+    color: #bf3029;
+}
+
 .poke__title{
     display: flex;
     align-items: center;
@@ -264,6 +277,27 @@
     margin-bottom: 20px;
 }
 
+.pokemon__data-container{
+    background-color: #66666665;
+    padding: 15px;
+    border-radius: 0 0 15px 15px;
+    margin: -5px 5px 0 5px;
+    height: 275px;
+}
+
+.pokemon__data-container p{
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.d-none{
+    display: none;
+}
+
+.col-resp{
+    width: 100%;
+}
 
 
 @media screen and (min-width: 380px){
@@ -281,6 +315,12 @@
     .pokemons{
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    .pokemonstatus{
+        width: 600px;
+        top: 50%;
+        left: 50%;
+    }
 }
 
 @media screen and (min-width: 992px){
@@ -291,14 +331,7 @@
         border-radius: 1rem;
     }
 
-    .pokemonstatus{
-        height: 750px;
-        width: 900px;
-        top: 50%;
-        left: 50%;
-    }
-
-    .pokemon-status__body{
-        height: 420px;
+    .col-resp{
+        width: 50%;
     }
 }

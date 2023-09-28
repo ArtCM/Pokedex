@@ -21,6 +21,8 @@ function renderPokemon(pokemon) {
     `;
 }
 
+
+
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(renderPokemon).join("");
@@ -43,8 +45,33 @@ function displayPokemonInfo(pokemon){
         <div class="pokemon-status__types type ${pokemon.type}">
            <p class="">${pokemon.type}</p>
         </div>
-        <div class="pokemon-status__body">
-                ${pokemon.number}
+        <div style="padding: 5px; border-radius: 0 0 15px 15px">
+            <div class="pokemon-status__body">
+                <div>
+                    <h3 class="titleselect">Status</h3>
+                </div>
+                <div>
+                    <h3>Habilidades</h3>
+                </div>
+            </div>
+            <div class="pokemon__data-container">
+                <div class="pokemon__data">
+                    <div class="col-resp">
+                        <p>
+                            Number: ${pokemon.number}<br>
+                            Weight: ${pokemon.weight}
+                        </p>
+                    </div>
+                    <div class="col-resp">
+                        <p>
+                        </p>
+                    </div>
+                </div>
+                <div class="pokemon__habilities d-none">
+                    <div class="col-resp"><p>Number: ${pokemon.number}</p></div>
+                    <div class="col-resp"></div>
+                </div>
+            </div>
         </div>
     `;
     pokemonStatus.innerHTML = statusContent;
