@@ -169,6 +169,7 @@
     z-index: 200!important;
     background-color: #fff;
     height: 700px;
+    max-height: 90vh;
     width: 80vw;
     top: 50%;
     left: 50%;
@@ -282,7 +283,6 @@
     padding: 15px;
     border-radius: 0 0 15px 15px;
     margin: -5px 5px 0 5px;
-    height: 275px;
 }
 
 .pokemon__data-container p{
@@ -318,6 +318,8 @@
 
     .pokemonstatus{
         width: 600px;
+        height: 700px;
+        max-height: 90vh;
         top: 50%;
         left: 50%;
     }

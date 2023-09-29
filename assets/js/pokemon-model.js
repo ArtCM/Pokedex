@@ -6,4 +6,6 @@ class Pokemon {
     types =[];
     photo;
     weight;
+    stat;
+    stats = [];
 }
